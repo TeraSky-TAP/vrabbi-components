@@ -13,6 +13,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=pacman
     prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod)
+    grafana/dashboard-selector: pacman
   description: Sample Javascript Based Pacman Using Kaniko
   name: pacman
   tags:
