@@ -64,7 +64,7 @@ metadata:
       sum(rate(container_fs_reads_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
       sum(rate(container_fs_writes_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod)
   description: Spring Petclinic
-  name: application-live-view-connector
+  name: petclinic
   tags:
   - v1alpha1
 spec:
