@@ -12,7 +12,7 @@ kind: Component
 metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=pacman
-    prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_memory_usage_bytes{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_receive_packets_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_reads_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_writes_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod)
+    prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod)
   description: Sample Javascript Based Pacman Using Kaniko
   name: pacman
   tags:
@@ -28,7 +28,7 @@ kind: Component
 metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=demo-app
-    prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_memory_usage_bytes{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_receive_packets_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_reads_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_writes_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod)
+    prometheus.io/rule: sum(rate(container_memory_usage_bytes{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod)
   description: Tanzu Java Web App Demo
   name: demo-app
   tags:
@@ -44,7 +44,7 @@ kind: Component
 metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=petclinic
-    prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_memory_usage_bytes{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_receive_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_reads_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_fs_writes_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod)
+    prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod)
   description: Spring Petclinic
   name: petclinic
   tags:
