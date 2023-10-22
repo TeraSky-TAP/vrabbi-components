@@ -1,0 +1,74 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  description: Demo Applications
+  name: demo-apps
+spec:
+  domain: tap
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=pacman
+    prometheus.io/rule: |
+      sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_memory_usage_bytes{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_receive_packets_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_transmit_packets_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_reads_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_writes_total{pod=~"^pacman-[0-9]+-deployment.*"}[1m])) by (pod)
+  description: Sample Javascript Based Pacman Using Kaniko
+  name: pacman
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=demo-app
+    prometheus.io/rule: |
+      sum(rate(container_cpu_usage_seconds_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_memory_usage_bytes{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_receive_packets_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_transmit_packets_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_reads_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_writes_total{pod=~"^demo-app-[0-9]+-deployment.*"}[1m])) by (pod)
+  description: Tanzu Java Web App Demo
+  name: demo-app
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=petclinic
+    prometheus.io/rule: |
+      sum(rate(container_cpu_usage_seconds_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_memory_usage_bytes{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_receive_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_reads_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod),
+      sum(rate(container_fs_writes_total{pod=~"^petclinic-[0-9]+-deployment.*"}[1m])) by (pod)
+  description: Spring Petclinic
+  name: application-live-view-connector
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
