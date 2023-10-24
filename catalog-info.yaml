@@ -11,6 +11,23 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/component=conventions
+    backstage.io/kubernetes-namespace: cartographer-system
+  description: Cartographer Conventions Controller Component
+  name: cartographer-conventions-3
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: cartographer
+  type: service
+---
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=pacman
     prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-.*-deployment.*"}[1m])) by (pod)
     grafana/dashboard-selector: pacman
