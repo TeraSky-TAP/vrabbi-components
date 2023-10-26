@@ -1,0 +1,38 @@
+site_name: 'Carvel Kapp Controller'
+
+nav:
+  - General:
+    - About: index.md
+    - Install: install.md
+  - Continuous Delivery:
+    - App CR Overview: app-overview.md
+    - App CR Detailed Spec: app-spec.md
+    - Install An App: walkthrough.md
+    - Example Usage: app-examples.md
+    - SOPS Integration: sops.md
+    - Security Model: security-model.md
+  - Package Management:
+    - Concepts and CRDs: packaging.md
+    - Create and Install a Package: packaging-tutorial.md
+    - Consuming Packages using the CLI: kctrl-package-tutorial.md
+    - Authoring packages using the CLI: authoring-command.md
+    - OSS Carvel Packages: oss-packages.md
+    - Artifact Formats: packaging-artifact-formats.md
+    - Consumer Concepts: package-consumer-concepts.md
+    - Overlays with PackageInstall: package-install-extensions.md
+    - Air-gapped installations: air-gapped-workflow.md
+    - Private registry authentication: private-registry-auth.md
+    - Package Management with GitOps: packaging-gitops.md
+  - Advanced Topics:
+    - Debugging CRs: debugging-crs.md
+    - Controller Configuration: controller-config.md
+    - Controller Startup: startup.md
+    - Debugging kapp-controller: debugging-kc.md
+  - Kctrl CLI Commands Reference:
+    - Management Commands: management-command.md
+    - Authoring Commands: kctrl-package-authoring.md
+  - FAQ:
+    - kapp-controller FAQ: faq.md
+    - kctrl FAQ: kctrl-faq.md
+    - Carvel Development Guidelines: dev.md
+    - Security: security.md

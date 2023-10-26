@@ -1,0 +1,18 @@
+site_name: 'Carvel SecretGen Controller'
+
+nav:
+  - General:
+    - About: index.md
+    - Install: install.md
+    - Walkthrough: walkthrough.md
+  - Sharing Secrets:
+    - Exporting And Importing Secrets: secret-export.md
+  - Secret Generator Types:
+    - Certificates: certificate.md
+    - Passwords: password.md
+    - SSH Keys: ssh_key.md
+    - RSA Keys: rsa_key.md
+  - Secret Templating:
+    - Templating Within Generator Types: secret-template-field.md
+    - Generating New Secrets From Existing Resource Data: secret-template.md
+  - Developing Guide: dev.md

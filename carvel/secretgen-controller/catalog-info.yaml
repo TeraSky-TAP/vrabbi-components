@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=secretgen-controller
+    github.com/project-slug: 'carvel-dev/secretgen-controller'
+    prometheus.io/rule: sum(container_memory_usage_bytes{pod=~"secretgen-controller-.*"}) by (pod),sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{pod=~"secretgen-controller-.*"}) by (pod)
+    'backstage.io/techdocs-ref': dir:.
+  description: Secret generation and templating controller from Carvel
+  name: secretgen-controller
+  title: Carvel SecretGen Controller
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: tkg-admins
+  system: carvel
+  type: service
