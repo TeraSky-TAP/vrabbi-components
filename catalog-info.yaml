@@ -50,6 +50,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
+  links:
+    - url: https://petclinic.tdp.tap-17.terasky.demo
+      title: Application
+      icon: dashboard
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=petclinic
     prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod)
