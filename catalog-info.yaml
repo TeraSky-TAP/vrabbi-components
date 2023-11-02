@@ -18,6 +18,7 @@ metadata:
     github.com/project-slug: vrabbi/js-pacman
   description: Sample Javascript Based Pacman Using Kaniko
   name: pacman
+  title: Pacman
   tags:
   - v1alpha1
 spec:
@@ -36,6 +37,7 @@ metadata:
     grafana/dashboard-selector: demo-app
     github.com/project-slug: vrabbi/java-web-app
   description: Tanzu Java Web App Demo
+  title: Demo Java App
   name: demo-app
   tags:
   - v1alpha1
@@ -56,6 +58,7 @@ metadata:
     github.com/project-slug: vrabbi/spring-petclinic
     backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
   description: Spring Petclinic
+  title: Spring Petclinic
   name: petclinic
   tags:
   - v1alpha1
