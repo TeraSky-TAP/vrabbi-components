@@ -64,3 +64,6 @@ spec:
   owner: platform-team
   system: demo-apps
   type: service
+  providesApis:
+  - tdp/petclinic-db424db5
+  
