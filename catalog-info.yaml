@@ -54,6 +54,7 @@ metadata:
     goharbor.io/repository-slug: tap/workloads/petclinic-tdp
     grafana/dashboard-selector: petclinic
     github.com/project-slug: vrabbi/spring-petclinic
+    backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
   description: Spring Petclinic
   name: petclinic
   tags:
