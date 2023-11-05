@@ -6,7 +6,7 @@ metadata:
     github.com/project-slug: 'carvel-dev/kapp-controller'
     prometheus.io/rule: sum by (name) (carvel_packageinstall_info{status="True"}),sum by (name) (carvel_packageinstall_info{status="False"}),sum(container_memory_usage_bytes{pod=~"kapp-controller-.*"}) by (pod),sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{pod=~"kapp-controller-.*"}) by (pod)
     'backstage.io/techdocs-ref': dir:.
-    #grafana/dashboard-selector: "url == 'http://grafana.tap-17.terasky.demo/d/a164a7f0339f99e89cea5cb47e9be617/kubernetes-compute-resources-workload?orgId=1&refresh=10s&var-datasource=default&var-cluster=&var-namespace=tdp&var-type=deployment&var-workload=petclinic-00001-deployment'"
+    goharbor.io/repository-slug: carvel-dev/kapp-controller
   description: Kapp Controller - A GitOps and Package Management controller from Carvel
   name: kapp-controller
   title: Carvel Kapp Controller
