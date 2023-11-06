@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    gitlab.com/project-slug: AuroraOSS/AuroraStore
+  description: Aurora App Store - Alternative to Google Play Store
+  name: aurora-store
+  title: Aurora App Store
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
