@@ -3,6 +3,7 @@ kind: Component
 metadata:
   annotations:
     gitlab.com/project-slug: AuroraOSS/AuroraStore
+    backstage.io/source-location: url:https://gitlab.com/AuroraOSS/AuroraStore
   description: Aurora App Store - Alternative to Google Play Store
   name: aurora-store
   title: Aurora App Store
