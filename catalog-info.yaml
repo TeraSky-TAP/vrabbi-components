@@ -16,6 +16,7 @@ metadata:
     grafana/dashboard-selector: pacman
     goharbor.io/repository-slug: tap/workloads/pacman-tdp
     github.com/project-slug: vrabbi/js-pacman
+    janus-idp.io/tekton: pacman
   description: Sample Javascript Based Pacman Using Kaniko
   name: pacman
   title: Pacman
