@@ -3,7 +3,7 @@ kind: Component
 metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app=kapp-controller
-    backstage.io/source-location: url:https://github.com/carvel-dev/kapp-controller
+    backstage.io/source-location: url:https://github.com/carvel-dev/kapp-controller/
     github.com/project-slug: 'carvel-dev/kapp-controller'
     prometheus.io/rule: sum by (name) (carvel_packageinstall_info{status="True"}),sum by (name) (carvel_packageinstall_info{status="False"}),sum(container_memory_usage_bytes{pod=~"kapp-controller-.*"}) by (pod),sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{pod=~"kapp-controller-.*"}) by (pod)
     'backstage.io/techdocs-ref': url:https://github.com/TeraSky-TAP/vrabbi-components/tree/main/carvel/kapp-controller
