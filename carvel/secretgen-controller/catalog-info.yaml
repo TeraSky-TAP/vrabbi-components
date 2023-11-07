@@ -4,7 +4,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app=secretgen-controller
     github.com/project-slug: 'carvel-dev/secretgen-controller'
-    backstage.io/source-location: url:https://github.com/carvel-dev/secretgen-controller/
+    backstage.io/source-location: url:https://github.com/carvel-dev/secretgen-controller/blob/develop/
     prometheus.io/rule: sum(container_memory_usage_bytes{pod=~"secretgen-controller-.*"}) by (pod),sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_irate{pod=~"secretgen-controller-.*"}) by (pod)
     'backstage.io/techdocs-ref': url:https://github.com/TeraSky-TAP/vrabbi-components/tree/main/carvel/secretgen-controller
     goharbor.io/repository-slug: carvel-dev/secretgen-controller
