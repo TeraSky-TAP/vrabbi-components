@@ -11,6 +11,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
+    kubecost.com/deployment-name: pacman
     backstage.io/kubernetes-id: pacman
     prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-.*-deployment.*"}[1m])) by (pod)
     grafana/dashboard-selector: pacman
@@ -32,6 +33,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
+    kubecost.com/deployment-name: demo-app
     backstage.io/kubernetes-id: demo-app
     prometheus.io/rule: container_cpu_usage_seconds_total{pod=~"^demo-app-.*-deployment.*"}
     goharbor.io/repository-slug: tap/workloads/demo-app-tdp
@@ -56,6 +58,7 @@ metadata:
       title: Application
       icon: dashboard
   annotations:
+    kubecost.com/deployment-name: petclinic
     dev.azure.com/project-repo: petclinic/petclinic
     backstage.io/kubernetes-id: petclinic
     prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod)
