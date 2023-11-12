@@ -57,6 +57,7 @@ metadata:
       title: Application
       icon: dashboard
   annotations:
+    vault.io/secrets-path: tdp/demo/secrets/app-01
     dev.azure.com/project-repo: petclinic/petclinic
     backstage.io/kubernetes-id: petclinic
     prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod)
