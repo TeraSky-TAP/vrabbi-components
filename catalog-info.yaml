@@ -12,7 +12,6 @@ kind: Component
 metadata:
   annotations:
     sonarqube.org/project-key: vrabbi_js-pacman
-    snyk.io/org-id: cb63685c-114d-4f18-bb71-8d6041d31424
     backstage.io/kubernetes-id: pacman
     backstage.io/source-location: url:https://github.com/vrabbi/js-pacman/blob/master/
     prometheus.io/rule: sum(rate(container_cpu_usage_seconds_total{pod=~"^pacman-.*-deployment.*"}[1m])) by (pod)
@@ -35,7 +34,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
-    snyk.io/org-id: cb63685c-114d-4f18-bb71-8d6041d31424
+    sonarqube.org/project-key: vrabbi_demo-app
     backstage.io/kubernetes-id: demo-app
     prometheus.io/rule: container_cpu_usage_seconds_total{pod=~"^demo-app-.*-deployment.*"}
     goharbor.io/repository-slug: tap/workloads/demo-app-tdp
@@ -60,7 +59,7 @@ metadata:
       title: Application
       icon: dashboard
   annotations:
-    snyk.io/org-id: cb63685c-114d-4f18-bb71-8d6041d31424
+    sonarqube.org/project-key: vrabbi_spring-petclinic
     vault.io/secrets-path: tdp/demo/secrets/app-01
     dev.azure.com/project-repo: petclinic/petclinic
     backstage.io/kubernetes-id: petclinic
