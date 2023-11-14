@@ -34,7 +34,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
-    sonarqube.org/project-key: vrabbi_demo-app
+    sonarqube.org/project-key: vrabbi_java-web-app
     backstage.io/kubernetes-id: demo-app
     prometheus.io/rule: container_cpu_usage_seconds_total{pod=~"^demo-app-.*-deployment.*"}
     goharbor.io/repository-slug: tap/workloads/demo-app-tdp
