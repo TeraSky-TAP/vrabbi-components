@@ -11,7 +11,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
-    sonarqube.org/project-key: js-pacman
+    sonarqube.org/project-key: vrabbi_js-pacman
     snyk.io/org-id: cb63685c-114d-4f18-bb71-8d6041d31424
     backstage.io/kubernetes-id: pacman
     backstage.io/source-location: url:https://github.com/vrabbi/js-pacman/blob/master/
