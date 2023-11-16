@@ -202,6 +202,12 @@ spec:
       input:
         root-dir: ${{ parameters.projectName }}/
         source-dir: result
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['create-repo-github'].output.remoteUrl }}
+        catalogInfoPath: '/catalog/catalog-info.yaml'
   output:
     links:
       - title: Repository
