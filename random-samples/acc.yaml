@@ -212,4 +212,3 @@ spec:
         acceleratorName: tanzu-java-web-app
         createdGitRepo: ${{ parameters["_createGitRepo"] }}
         uuid: ${{steps["invoke-accelerator"].output.provenance.id}}
-relations: []
