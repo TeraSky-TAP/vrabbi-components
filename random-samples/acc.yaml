@@ -155,6 +155,19 @@ spec:
                   title: Default Branch
                   type: string
                   default: main
+                repoVisibility:
+                  tile: Repo Visibility
+                  type: string
+                  enum:
+                    - private
+                    - internal
+                    - public
+                  enumNames:
+                    - Private
+                    - Internal
+                    - Public
+                  default: private
+                  ui:widget: select
   steps:
     - id: fetch-accelerator
       name: Fetch accelerator and fragments
@@ -196,6 +209,7 @@ spec:
         token: ${{ secrets.USER_OAUTH_TOKEN }}
         defaultBranch: ${{ parameters.bsGitBranch }}
         sourcePath: result
+        repoVisibility: ${{ parameters.repoVisibility }}
     - id: publish-zip
       name: zip files from accelerator and make them available to download
       action: vmware:publish-zip
@@ -206,7 +220,7 @@ spec:
       name: Register
       action: catalog:register
       input:
-        repoContentsUrl: ${{ steps['create-repo-github'].output.remoteUrl }}
+        repoContentsUrl: ${{ steps['create-repo-github'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog/catalog-info.yaml'
   output:
     links:
