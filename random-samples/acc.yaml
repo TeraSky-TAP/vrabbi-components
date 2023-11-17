@@ -182,8 +182,7 @@ spec:
                   description: Owner of the component
                   ui:field: OwnerPicker
                   ui:options:
-                    catalogFilter:
-                      kind: Group
+                    allowedKinds: [Group]
                 system:
                   title: System
                   type: string
@@ -191,9 +190,7 @@ spec:
                   ui:field: EntityPicker
                   ui:options:
                     allowArbitraryValues: true
-                    catalogFilter:
-                      kind: System
-                      spec.owner: ${{ parameters.owner }}
+                    allowedKinds: [System]
   steps:
     - id: fetch-accelerator
       name: Fetch accelerator and fragments
