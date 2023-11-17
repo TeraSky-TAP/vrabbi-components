@@ -239,7 +239,7 @@ spec:
         provenance: ${{steps["invoke-accelerator"].output.provenance}}
     - id: create-component-yaml
       action: catalog:write
-      if: ${{ parameters['_registerComponent']
+      if: ${{ parameters['_registerComponent'] }}
       name: Create Catalog Info YAML
       input:
         filePath: result/auto-generated-catalog-info.yaml
