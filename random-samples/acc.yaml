@@ -240,7 +240,7 @@ spec:
       if: ${{ parameters['_registerComponent']
       name: Create Catalog Info YAML
       input:
-        filePath: auto-generated-catalog-info.yaml
+        filePath: result/auto-generated-catalog-info.yaml
         entity:
           apiVersion: backstage.io/v1alpha1
           kind: Component
