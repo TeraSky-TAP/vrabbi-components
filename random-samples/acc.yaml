@@ -189,8 +189,8 @@ spec:
                   description: System the component belongs to
                   ui:field: EntityPicker
                   ui:options:
-                    allowArbitraryValues: true
                     allowedKinds: [System]
+                    defaultKind: System
                 lifecycle:
                   title: Lifecycle
                   type: string
