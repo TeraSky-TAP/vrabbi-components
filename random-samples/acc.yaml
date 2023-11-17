@@ -254,7 +254,7 @@ spec:
               janus-idp.io/tekton: ${{ parameters.projectName }}
           spec:
             type: service
-            system: ${{ parameters.system }}
+            system: ${{ parameters.system | parseEntityRef | pick('name') }}
             lifecycle: ${{ parameters.lifecycle }}
             owner: ${{ parameters.owner }}
     - id: create-repo-github
