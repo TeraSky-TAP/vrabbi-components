@@ -248,7 +248,7 @@ spec:
             name: test
             annotations:
               backstage.io/kubernetes-label-selector: "app.kubernetes.io/part-of=${{ parameters.projectName }}"
-              backstage.io/techdocs-ref': dir:.
+              backstage.io/techdocs-ref: dir:.
               github.com/project-slug: ${{ parameters.bsGitRepository | projectSlug }}
               grafana/dashboard-selector: ${{ parameters.projectName }}
               janus-idp.io/tekton: ${{ parameters.projectName }}
