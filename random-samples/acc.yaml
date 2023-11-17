@@ -24,14 +24,6 @@ spec:
           description: Provide a name for your new project
           type: string
           default: tanzu-java-web-app
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            catalogFilter:
-              kind: Group
         buildTool:
           title: Build Tool
           type: string
@@ -114,7 +106,6 @@ spec:
                       - const: gradle
       ui:order:
         - projectName
-        - owner
         - buildTool
         - ide
         - springBootVersion
@@ -168,6 +159,41 @@ spec:
                     - Public
                   default: private
                   ui:widget: select
+    - title: Backstage Config
+      properties:
+        _registerComponent:
+          title: Should this entity be auto registered in the portal
+          type: boolean
+          defaultValue: false
+      dependencies:
+        _registerComponent:
+          oneOf:
+            - properties:
+                _registerComponent:
+                  enum:
+                    - false
+            - properties:
+                _registerComponent:
+                  enum:
+                    - true
+                owner:
+                  title: Owner
+                  type: string
+                  description: Owner of the component
+                  ui:field: OwnerPicker
+                  ui:options:
+                    catalogFilter:
+                      kind: Group
+                system:
+                  title: System
+                  type: string
+                  description: System the component belongs to
+                  ui:field: EntityPicker
+                  ui:options:
+                    allowArbitraryValues: true
+                    catalogFilter:
+                      kind: System
+                      spec.owner: ${{ parameters.owner }}
   steps:
     - id: fetch-accelerator
       name: Fetch accelerator and fragments
@@ -217,6 +243,7 @@ spec:
         root-dir: ${{ parameters.projectName }}/
         source-dir: result
     - id: register
+      if: ${{ not parameters['_explore'] and parameters['_registerComponent']
       name: Register
       action: catalog:register
       input:
