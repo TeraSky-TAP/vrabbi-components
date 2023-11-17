@@ -245,7 +245,7 @@ spec:
           apiVersion: backstage.io/v1alpha1
           kind: Component
           metadata:
-            name: test
+            name: ${{ parameters.projectName }}
             annotations:
               backstage.io/kubernetes-label-selector: "app.kubernetes.io/part-of=${{ parameters.projectName }}"
               backstage.io/techdocs-ref: dir:.
