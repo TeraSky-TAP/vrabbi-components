@@ -191,6 +191,19 @@ spec:
                   ui:options:
                     allowArbitraryValues: true
                     allowedKinds: [System]
+                lifecycle:
+                  title: Lifecycle
+                  type: string
+                  enum:
+                    - experimental
+                    - production
+                    - deprecated
+                  enumNames:
+                    - Experimental
+                    - Production
+                    - Deprecated
+                  default: experimental
+                  ui:widget: select
   steps:
     - id: fetch-accelerator
       name: Fetch accelerator and fragments
@@ -222,6 +235,28 @@ spec:
       if: ${{ not parameters['_explore'] }}
       input:
         provenance: ${{steps["invoke-accelerator"].output.provenance}}
+    - id: create-component-yaml
+      action: catalog:write
+      if: ${{ parameters['_registerComponent']
+      name: Create Catalog Info YAML
+      input:
+        filePath: auto-generated-catalog-info.yaml
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: test
+            annotations:
+              backstage.io/kubernetes-label-selector: "app.kubernetes.io/part-of=${{ parameters.projectName }}"
+              backstage.io/techdocs-ref': dir:.
+              github.com/project-slug: ${{ parameters.bsGitRepository | projectSlug }}
+              grafana/dashboard-selector: ${{ parameters.projectName }}
+              janus-idp.io/tekton: ${{ parameters.projectName }}
+          spec:
+            type: service
+            system: ${{ parameters.system }}
+            lifecycle: ${{ parameters.lifecycle }}
+            owner: ${{ parameters.owner }}
     - id: create-repo-github
       name: Create github repo
       if: ${{ not parameters['_explore'] and parameters['_createGitRepo'] and
@@ -245,7 +280,8 @@ spec:
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['create-repo-github'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog/catalog-info.yaml'
+        catalogInfoPath: 'auto-generated-catalog-info.yaml'
+        optional: true
   output:
     links:
       - title: Repository
@@ -256,3 +292,6 @@ spec:
         acceleratorName: tanzu-java-web-app
         createdGitRepo: ${{ parameters["_createGitRepo"] }}
         uuid: ${{steps["invoke-accelerator"].output.provenance.id}}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
