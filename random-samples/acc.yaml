@@ -275,7 +275,7 @@ spec:
         root-dir: ${{ parameters.projectName }}/
         source-dir: result
     - id: register
-      if: ${{ not parameters['_explore'] and parameters['_registerComponent']
+      if: ${{ not parameters['_explore'] and parameters['_registerComponent'] and parameters['_createGitRepo'] }}
       name: Register
       action: catalog:register
       input:
