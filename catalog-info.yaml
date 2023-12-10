@@ -59,6 +59,7 @@ metadata:
       title: Application
       icon: dashboard
   annotations:
+    newrelic.com/dashboard-guid: NDI0MjQzN3xWSVp8REFTSEJPQVJEfGRhOjQ4NTAyNzI
     sonarqube.org/project-key: vrabbi_spring-petclinic
     vault.io/secrets-path: tdp/demo/secrets/app-01
     dev.azure.com/project-repo: petclinic/petclinic
