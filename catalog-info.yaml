@@ -69,6 +69,7 @@ metadata:
     grafana/dashboard-selector: petclinic
     github.com/project-slug: vrabbi/spring-petclinic
     backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
+    kafka.apache.org/consumer-groups: demo-01
   description: Spring Petclinic
   title: Spring Petclinic
   name: petclinic
