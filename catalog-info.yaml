@@ -61,7 +61,7 @@ metadata:
   annotations:
     newrelic.com/dashboard-guid: NDI0MjQzN3xWSVp8REFTSEJPQVJEfGRhOjQ4NTAyNzI
     sonarqube.org/project-key: vrabbi_spring-petclinic
-    vault.io/secrets-path: tdp/demo/secrets/app-01,tdp/demo/secrets/all-apps
+    vault.io/secrets-path: tdp/demo/secrets/app-01
     dev.azure.com/project-repo: petclinic/petclinic
     backstage.io/kubernetes-id: petclinic
     prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-.*-deployment.*"}[1m])) by (pod)
