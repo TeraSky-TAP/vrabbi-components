@@ -132,7 +132,7 @@ metadata:
     github.com/project-slug: vrabbi/spring-petclinic
     backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
     kafka.apache.org/consumer-groups: demo-01/default
-  description: Spring Petclinic With Grype Scanner
+  description: Spring Petclinic With Snyk Scanner
   title: Spring Petclinic - Snyk and Prisma
   name: petclinic-snyk-prisma
   tags:
@@ -163,9 +163,9 @@ metadata:
     github.com/project-slug: vrabbi/spring-petclinic
     backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
     kafka.apache.org/consumer-groups: demo-01/default
-  description: Spring Petclinic With Grype Scanner
-  title: Spring Petclinic - Grype
-  name: petclinic-grype-demo
+  description: Spring Petclinic With Snyk Scanner
+  title: Spring Petclinic - Snyk
+  name: petclinic-snyk
   tags:
   - v1alpha1
 spec:
