@@ -82,4 +82,96 @@ spec:
   type: service
   providesApis:
   - tdp/petclinic-db424db5
-  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  links:
+    - url: https://petclinic.tdp.tap-17.terasky.demo
+      title: Application
+      icon: dashboard
+  annotations:
+    sonarqube.org/project-key: scan-demo_petclinic-grype-demo
+    vault.io/secrets-path: tdp/demo/secrets/app-01
+    dev.azure.com/project-repo: petclinic/petclinic
+    backstage.io/kubernetes-id: petclinic
+    prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-grype-demo.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-grype-demo.*-deployment.*"}[1m])) by (pod)
+    goharbor.io/repository-slug: tap/workloads/petclinic-grype-demo-scan-demo
+    grafana/dashboard-selector: petclinic
+    github.com/project-slug: vrabbi/spring-petclinic
+    backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
+    kafka.apache.org/consumer-groups: demo-01/default
+  description: Spring Petclinic With Grype Scanner
+  title: Spring Petclinic - Grype
+  name: petclinic-grype-demo
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
+  providesApis:
+  - tdp/petclinic-db424db5
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  links:
+    - url: https://petclinic.tdp.tap-17.terasky.demo
+      title: Application
+      icon: dashboard
+  annotations:
+    sonarqube.org/project-key: scan-demo_petclinic-snyk-prisma
+    vault.io/secrets-path: tdp/demo/secrets/app-01
+    dev.azure.com/project-repo: petclinic/petclinic
+    backstage.io/kubernetes-id: petclinic
+    prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-snyk-prisma.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-snyk-prisma.*-deployment.*"}[1m])) by (pod)
+    goharbor.io/repository-slug: tap/workloads/petclinic-snyk-prisma-scan-demo
+    grafana/dashboard-selector: petclinic
+    github.com/project-slug: vrabbi/spring-petclinic
+    backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
+    kafka.apache.org/consumer-groups: demo-01/default
+  description: Spring Petclinic With Grype Scanner
+  title: Spring Petclinic - Snyk and Prisma
+  name: petclinic-snyk-prisma
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
+  providesApis:
+  - tdp/petclinic-db424db5
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  links:
+    - url: https://petclinic.tdp.tap-17.terasky.demo
+      title: Application
+      icon: dashboard
+  annotations:
+    sonarqube.org/project-key: scan-demo_petclinic-snyk
+    vault.io/secrets-path: tdp/demo/secrets/app-01
+    dev.azure.com/project-repo: petclinic/petclinic
+    backstage.io/kubernetes-id: petclinic
+    prometheus.io/rule: sum(rate(container_network_receive_packets_total{pod=~"^petclinic-snyk-0.*-deployment.*"}[1m])) by (pod),sum(rate(container_network_transmit_packets_total{pod=~"^petclinic-snyk-0.*-deployment.*"}[1m])) by (pod)
+    goharbor.io/repository-slug: tap/workloads/petclinic-snyk-scan-demo
+    grafana/dashboard-selector: petclinic
+    github.com/project-slug: vrabbi/spring-petclinic
+    backstage.io/techdocs-ref: url:https://github.com/vrabbi/spring-petclinic/tree/main
+    kafka.apache.org/consumer-groups: demo-01/default
+  description: Spring Petclinic With Grype Scanner
+  title: Spring Petclinic - Grype
+  name: petclinic-grype-demo
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: demo-apps
+  type: service
+  providesApis:
+  - tdp/petclinic-db424db5
