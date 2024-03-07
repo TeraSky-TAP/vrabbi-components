@@ -19,6 +19,7 @@ metadata:
     goharbor.io/repository-slug: tap/workloads/pacman-tdp
     github.com/project-slug: vrabbi/js-pacman
     janus-idp.io/tekton: pacman
+    backstage.io/kubernetes-label-selector: app=pacman
   description: Sample Javascript Based Pacman Using Kaniko
   name: pacman
   title: Pacman
