@@ -57,3 +57,72 @@ spec:
   owner: platform-team
   system: cert-manager
   type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  description: Ingress Controller
+  name: contour
+spec:
+  domain: kubetopus
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/component=contour
+    backstage.io/kubernetes-namespace: projectcontour
+  description: Core Component Of Contour Ingress Controller
+  name: contour
+  title: Contour
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: contour
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/component=envoy
+    backstage.io/kubernetes-namespace: projectcontour
+  description: Dataplane Component Of Contour Ingress Controller
+  name: envoy
+  title: Contour Envoy
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: contour
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  description: Nginx Ingress Controller
+  name: nginx
+spec:
+  domain: kubetopus
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=ingress-nginx
+    backstage.io/kubernetes-namespace: ingress-nginx
+  description: Nginx Ingress Controller
+  name: nginx
+  title: Nginx Ingress Controller
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: nginx
+  type: service
