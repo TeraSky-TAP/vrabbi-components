@@ -1,0 +1,89 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=openunison-operator
+  description: Open Unison Operator
+  name: openunison-operator
+  title: Open Unison Operator
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: openunison
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=openunison-orchestra
+  description: The main component of Open Unison for providing authentication services to the platform.
+  name: openunison-orchestra
+  title: Open Unison Orchestra
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: openunison
+  type: service
+  dependsOn:
+    - openunison-operator
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=ouhtml-orchestra-login-portal
+  description: The Open Unison Portal for easy access and login purposes.
+  name: openunison-portal
+  title: Open Unison Web Portal
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: openunison
+  type: service
+  dependsOn:
+    - openunison-orchestra
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=kube-oidc-proxy-orchestra
+  description: The Open Unison Kube OIDC Proxy for kubernetes access from CLI tools like Kubectl or Helm.
+  name: openunison-orchestra-kube-oidc-proxy
+  title: Open Unison Orchestra Kube OIDC Proxy
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: openunison
+  type: service
+  dependsOn:
+    - openunison-orchestra
+    - openunison-portal
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=kube-oidc-proxy-cicd-proxy
+  description: The Open Unison Kube OIDC Proxy for kubernetes access from Backstage.
+  name: openunison-backstage-kube-oidc-proxy
+  title: Open Unison Backstage Kube OIDC Proxy
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: openunison
+  type: service
+  dependsOn:
+    - openunison-orchestra
+    - openunison-portal
