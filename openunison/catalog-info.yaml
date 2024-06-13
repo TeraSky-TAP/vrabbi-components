@@ -47,7 +47,7 @@ spec:
   system: openunison
   type: service
   dependsOn:
-    - openunison-operator
+    - component:default/openunison-operator
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -65,7 +65,7 @@ spec:
   system: openunison
   type: service
   dependsOn:
-    - openunison-orchestra
+    - component:default/openunison-orchestra
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -83,8 +83,8 @@ spec:
   system: openunison
   type: service
   dependsOn:
-    - openunison-orchestra
-    - openunison-portal
+    - component:default/openunison-orchestra
+    - component:default/openunison-portal
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -102,5 +102,5 @@ spec:
   system: openunison
   type: service
   dependsOn:
-    - openunison-orchestra
-    - openunison-portal
+    - component:default/openunison-orchestra
+    - component:default/openunison-portal
