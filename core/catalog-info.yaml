@@ -1,0 +1,59 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  description: Certificate Management
+  name: cert-manager
+spec:
+  domain: kubetopus
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=cert-manager
+    backstage.io/kubernetes-namespace: cert-manager
+  description: 
+  name: cert-manager
+  title: Cert Manager
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: cert-manager
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=webhook
+    backstage.io/kubernetes-namespace: cert-manager
+  description: Cert Manager Admission Webhook
+  name: webhook
+  title: Cert Manager Webhook
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: cert-manager
+  type: service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    backstage.io/kubernetes-label-selector: app=cainjector
+    backstage.io/kubernetes-namespace: cert-manager
+  description: Cert Manager CA Injector
+  name: ca-injector
+  title: Cert Manager CA Injector
+  tags:
+  - v1alpha1
+spec:
+  lifecycle: production
+  owner: platform-team
+  system: cert-manager
+  type: service
