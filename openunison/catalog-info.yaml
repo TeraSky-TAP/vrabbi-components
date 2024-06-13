@@ -1,4 +1,21 @@
 apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: kubetopus
+  description: Everything related to the KubeTopus Platform
+spec:
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  description: Open Unison Authentication Platform
+  name: openunison
+spec:
+  domain: kubetopus
+  owner: platform-team
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   annotations:
